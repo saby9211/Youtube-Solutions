@@ -37,7 +37,7 @@ int main() {
             ll ans = 0;
 
             for(ll k = l; k<=r; k++) {
-                ans = max(ans, nums[k] * nums[l-1] * nums[r+1] + rec(l, k-1) + rec(k+1, r)); // Pass j to recursive calls
+                ans = max(ans, nums[k] * nums[l-1] * nums[r+1] + rec(l, k-1) + rec(k+1, r)); 
             }
             // save and return
             return dp[l][r] = ans;
