@@ -103,7 +103,7 @@ void solve(){
     }
 
     vector<vector<ll>> dp(n+1, vector<ll> (3, -1));
-
+    // dp[day][prev] : max happiness taro can gain from day = day to n-1th day such that he have performed prev activity on day = day - 1
     function<ll(ll, ll)> rec = [&] (ll day, ll prev) -> ll {
         // pruning
 
