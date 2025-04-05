@@ -14,17 +14,19 @@ void solve(){
         cin >> pixel[i];
     }
 
-    vector<ll> left_peeks(n), right_peeks(n);
+     vector<ll> left_peeks(n), right_peeks(n);
 
     ll k = 0;
     for(ll i=0; i<n; i++) {
         k++;
-        left_peeks[i] = min(k, pixel[i]);
+        k=min(k,pixel[i]);
+        left_peeks[i] = k;
     }
     k = 0;
     for(ll i=n-1; i>=0; i--) {
         k++;
-        right_peeks[i] = min(k, pixel[i]);
+        k=min(k,pixel[i]);
+        right_peeks[i] = k;
     }
 
     ll mountain = 0;
@@ -36,6 +38,7 @@ void solve(){
     ll sum = accumulate(pixel.begin(), pixel.end(), 0LL);
 
     cout << sum - mountain * mountain << "\n";
+    
 }
 
 int main(){
@@ -49,5 +52,5 @@ int main(){
         solve();
     }
 
-    return 0;
+    return 0;
 }
